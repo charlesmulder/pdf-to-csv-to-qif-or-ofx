@@ -1,0 +1,16 @@
+{
+  "name": "accounting",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "csv": "^0.4.6",
+    "moment": "^2.11.1",
+    "replace": "^0.3.0"
+  }
+}
