@@ -7,23 +7,11 @@ var util = require('util');
 fs.readFile(file, 'utf8', (err, data) => {
     if (err) throw err;
     csv.parse(data, {}, function(err, arr) {
-        var line = [];
+
+        var queue = [];
+
         csv.transform(arr, (row) => {
-            if( ! row[4]) { // then description from previous line 
 
-            } else { // normal line entry or balance brought forward line
-
-                if(! row[1] && ! row[2]) {  // balance brought forward line
-
-                    if(row[3]) { //first balance brought forward line
-
-                    } else { //balance brought forward line later on
-                        
-                    }
-                } else { //normal line
-
-                }
-            }
             // fix date format
             if(row[3]) {
                 row[3] = row[3].replace(/(\d{2})\s(\d{2}).*/, '$1/$2/2014');
@@ -47,8 +35,52 @@ fs.readFile(file, 'utf8', (err, data) => {
                     row[2] = row[2].replace(/[-]/, '').trim();
                 }
             }
-            console.log(row);
-            return row;
+
+            /**
+             * overflowing description
+             * append to previous line description 
+             * and return
+             */
+            if( ! row[4] && queue.length) { 
+                var previous = queue[0];
+                queue = [];
+                previous[0] += row[0];
+                console.log(previous);
+                return previous;
+            } else { 
+                /**
+                 * normal or balance brought forward entry
+                 */
+                if(! row[1] && ! row[2]) {  // balance brought forward line
+
+                    if(row[3]) { //first balance brought forward line
+                        console.log(row);
+                        return row;
+                    } else { //balance brought forward line later on
+                        return false;
+                    }
+
+                } else { 
+                    /**
+                     * normal entry 
+                     * if item in queue
+                     * then dump queue to var, assign current entry to new queue, return var
+                     * else
+                     * assign current entry to queue
+                     */
+                    if(queue.length) {
+                        var previous = queue[0];
+                        queue[0] = row;
+                        console.log(previous);
+                        return previous;
+                    } else {
+                        queue.push(row);
+                        return false;
+                    }
+                }
+            }
+            //console.log(row);
+            //return row;
         }, (err, output) => {
             if (err) throw err;
             csv.stringify(output, function(err, string){
