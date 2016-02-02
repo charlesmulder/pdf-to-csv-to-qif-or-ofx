@@ -45,7 +45,7 @@ fs.readFile(file, 'utf8', (err, data) => {
                 var previous = queue[0];
                 queue = [];
                 previous[0] += row[0];
-                console.log(previous);
+                //console.log(previous);
                 return previous;
             } else { 
                 /**
@@ -54,7 +54,7 @@ fs.readFile(file, 'utf8', (err, data) => {
                 if(! row[1] && ! row[2]) {  // balance brought forward line
 
                     if(row[3]) { //first balance brought forward line
-                        console.log(row);
+                        //console.log(row);
                         return row;
                     } else { //balance brought forward line later on
                         return false;
@@ -71,7 +71,7 @@ fs.readFile(file, 'utf8', (err, data) => {
                     if(queue.length) {
                         var previous = queue[0];
                         queue[0] = row;
-                        console.log(previous);
+                        //console.log(previous);
                         return previous;
                     } else {
                         queue.push(row);
