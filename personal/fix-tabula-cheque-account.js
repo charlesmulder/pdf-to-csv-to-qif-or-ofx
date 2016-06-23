@@ -1,9 +1,12 @@
 var fs = require('fs');
 var file = process.argv[2];
-var year = process.argv[3];
+
+var path = file.split('/');
+path.shift();
+var year = path[5];
+
 var csv = require('csv');
 var util = require('util');
-
 
 fs.readFile(file, 'utf8', (err, data) => {
     if (err) throw err;
@@ -89,7 +92,6 @@ fs.readFile(file, 'utf8', (err, data) => {
                 fs.writeFile(newFile, string, (err) => {
                     if (err) throw err;
                     console.log('It\'s saved!');
-                    console.log('Date is hard coded to 2014 make sure its correct');
                 });
             });
         });
