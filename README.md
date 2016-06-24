@@ -22,6 +22,25 @@ Income is linked to Income Account
 *Salary should be split as follows:*
 In this example, choose the deposit account (Assets:Checking) and then enter the amount that is being deposited into it (e.g. $670). Follow this by entering the amounts for the various taxes: Expenses:Taxes:Federal account, $180; Expenses:Taxes:Medicare account, $90; and Expenses:Taxes:Social Security account, $60. Finally, enter the gross total of your paycheck ($1,000 in this example) as a withdrawal transfer from Income:Salary.
 
+### Depreciation
+
+Asset type |  Rate
+:--- | ---:
+Air-conditioners | 16,6%
+Burglar alarms (removable) | 10%
+Computers (PC) | 33,3%
+Computer Software | 50%
+Fax machines | 33,3%
+Furniture and fittings | 16,6%
+Passenger Cars | 20%
+Photocopying Equipment | 20%
+Power tools (hand-operated) | 20%
+Shop fittings | 16,6%
+Telephone equipment | 20%
+Trucks (heavy duty) | 33,3%
+Trucks (other) | 25%
+Workshop equipment | 20%
+
 ### Reconciliation
 At the bottom of the Reconcile window there is a Difference field, which should show 0.00 when you are done reconciling. If it shows some other value, then either you have missed transactions, or some amounts may be incorrect in GnuCash. (Or, less likely, the bank may have made an error.)
 
