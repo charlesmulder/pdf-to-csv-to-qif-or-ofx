@@ -23,6 +23,7 @@ Income is linked to Income Account
 In this example, choose the deposit account (Assets:Checking) and then enter the amount that is being deposited into it (e.g. $670). Follow this by entering the amounts for the various taxes: Expenses:Taxes:Federal account, $180; Expenses:Taxes:Medicare account, $90; and Expenses:Taxes:Social Security account, $60. Finally, enter the gross total of your paycheck ($1,000 in this example) as a withdrawal transfer from Income:Salary.
 
 ### Depreciation
+[write off table](http://www.sars.gov.za/AllDocs/LegalDoclib/Rulings/LAPD-IntR-R-BGR-2012-07%20-%20Wear%20And%20Tear%20Depreciation%20Allowance.pdf)
 
 Asset type |  Rate
 :--- | ---:
@@ -32,6 +33,7 @@ Computers (PC) | 33,3%
 Computer Software | 50%
 Fax machines | 33,3%
 Furniture and fittings | 16,6%
+Motorcycles | 25%
 Passenger Cars | 20%
 Photocopying Equipment | 20%
 Power tools (hand-operated) | 20%
