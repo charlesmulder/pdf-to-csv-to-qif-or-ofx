@@ -3,7 +3,7 @@ var file = process.argv[2];
 
 var path = file.split('/');
 path.shift();
-var year = path[5];
+var year = path[6]; // year is extracted from file path :-)
 
 var csv = require('csv');
 var util = require('util');
