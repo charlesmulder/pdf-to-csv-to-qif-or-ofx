@@ -53,19 +53,37 @@ This is a non-editable item which displays the balance from the previous reconci
 This field should be filled with the ending balance as it appears in the statement.
 
 ## Converting
+
 ### pdf to csv
 Download [Tabula](http://tabula.technology/)
 ```bash
 $ java -Dfile.encoding=utf-8 -Xms256M -Xmx1024M -jar tabula.jar
 ```
 
-### csv format for input into CSV Converter
-```bash
-$ node personal/fix-tabula-cheque-account.js your-file.csv
-$ node personal/fix-tabula-credit-card.js your-file.csv
+## Editing CSV
+
+### Merging columns
+
+```excel
+# D1 E1 F1
+=D1&" "&E1&" "&F1
 ```
 
-### csv to qif
-[Online CSV Converter](http://www.csvconverter.biz/)
+### Text to dates
 
+Ensure locale is set to UK
 
+`Tools > Options > Language Settings > Locale setting = English (UK)`
+
+Add a new column of `Date` type
+
+```
+Format > Cells > Catergory > Date > Format = 31/12/99
+                                    Language = Default - English (UK)
+```
+
+Call `DATEVALUE()` function from cells of new date column using textual date representation as input argument.
+
+```excel
+=DATEVALUE(A1)
+```
