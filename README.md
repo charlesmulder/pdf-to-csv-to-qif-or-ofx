@@ -8,19 +8,11 @@ $ sudo apt-get install libdbd-sqlite3 gnucash
 ```
 
 ## Tips
-When downloading statements from Standard Bank website we prefer OFX.
 
-When converting from pdf to csv we prefer QIF
+- Use process dates for credit card transactions.
+- Use posting dates for CSV imports
 
-In asset and expense accounts, debits increase the balance and credits decrease the balance. In liability, equity and income accounts, credits increase the balance and debits decrease the balance.
-
-In traditional double-entry accounting, the left column in the register is used for debits, while the right column is used for credits. Accountants record increases in asset and expense accounts on the debit (left) side, and they record increases in liability, revenue, and equity accounts on the credit (right) side. GnuCash follows this convention in the register.
-
-Opening balances are linked to Equity::Opening Balance Account
-Income is linked to Income Account
-
-*Salary should be split as follows:*
-In this example, choose the deposit account (Assets:Checking) and then enter the amount that is being deposited into it (e.g. $670). Follow this by entering the amounts for the various taxes: Expenses:Taxes:Federal account, $180; Expenses:Taxes:Medicare account, $90; and Expenses:Taxes:Social Security account, $60. Finally, enter the gross total of your paycheck ($1,000 in this example) as a withdrawal transfer from Income:Salary.
+> Salary should be split as follows: In this example, choose the deposit account (Assets:Checking) and then enter the amount that is being deposited into it (e.g. $670). Follow this by entering the amounts for the various taxes: Expenses:Taxes:Federal account, $180; Expenses:Taxes:Medicare account, $90; and Expenses:Taxes:Social Security account, $60. Finally, enter the gross total of your paycheck ($1,000 in this example) as a withdrawal transfer from Income:Salary.
 
 ### Depreciation
 [write off table](http://www.sars.gov.za/AllDocs/LegalDoclib/Rulings/LAPD-IntR-R-BGR-2012-07%20-%20Wear%20And%20Tear%20Depreciation%20Allowance.pdf)
@@ -55,12 +47,14 @@ This field should be filled with the ending balance as it appears in the stateme
 ## Converting
 
 ### pdf to csv
+
 Download [Tabula](http://tabula.technology/)
+
 ```bash
 $ java -Dfile.encoding=utf-8 -Xms256M -Xmx1024M -jar tabula.jar
 ```
 
-## Editing CSV
+## Editing CSV in Libre Calc
 
 ### Merging columns
 
@@ -87,3 +81,5 @@ Call `DATEVALUE()` function from cells of new date column using textual date rep
 ```excel
 =DATEVALUE(A1)
 ```
+
+
